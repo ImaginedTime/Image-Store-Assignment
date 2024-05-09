@@ -2,7 +2,7 @@ import { Router } from 'express';
 import { body, header, validationResult } from 'express-validator';
 import validateRequest from '../utils/validate.js';
 
-import { uploadImage, getImages, searchImages } from '../controllers/images.js';
+import { uploadImage, getImages } from '../controllers/images.js';
 
 import multer from 'multer';
 const upload = multer({ dest: "uploads/" });
@@ -21,10 +21,5 @@ router.post('/upload', [
     body('name').exists().isString(),
     validateRequest,
 ], uploadImage);
-
-router.get('/search/:name', [
-    header('Authorization').exists().isString(),
-    validateRequest,
-], searchImages);
 
 export default router;

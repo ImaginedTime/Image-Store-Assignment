@@ -6,7 +6,7 @@ import { UserContext } from '../context/userContext';
 export default function Home() {
 
 	const [images, setImages] = useState([]);
-	const { isLoggedIn, searchQuery } = useContext(UserContext);
+	const { isLoggedIn, searchQuery, baseURL } = useContext(UserContext);
 
 	const [filteredImages, setFilteredImages] = useState([]);
 
@@ -27,7 +27,7 @@ export default function Home() {
 			navigate('/auth');
 		}
 
-		axios.get('/images', {
+		axios.get(`${baseURL}/images`, {
 			headers: {
 				'Authorization': `Bearer ${localStorage.getItem('token')}`
 			}

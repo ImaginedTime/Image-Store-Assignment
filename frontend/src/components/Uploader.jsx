@@ -1,15 +1,16 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import ImageUploading from 'react-images-uploading';
 
 import axios from 'axios';
 import toast from 'react-hot-toast';
+import { UserContext } from '../context/userContext';
 
 export default function Uploader() {
 	const [images, setImages] = useState([]);
-
 	const [name, setName] = useState('');
-
 	const [loading, setLoading] = useState(false);
+
+	const { baseURL } = useContext(UserContext);
 
 	const onChange = (imageList, addUpdateIndex) => {
 		// data for submit
@@ -51,7 +52,7 @@ export default function Uploader() {
 			try {
 				setLoading(true);
 
-				const response = await axios.post('/images/upload', formData, {
+				const response = await axios.post(`${baseURL}/images/upload`, formData, {
 					headers: {
 						'Content-Type': 'multipart/form-data',
 						'Authorization': `Bearer ${localStorage.getItem('token')}`

@@ -62,22 +62,3 @@ export const getImages = async (req, res) => {
         });
     }
 }
-
-export const searchImages = async (req, res) => {
-    try {
-        const userId = parseToken(req).id;
-        const nameToSearch = req.params.name;
-
-        const images = await Image.find({ user: userId, name: { $regex: nameToSearch, $options: 'i' } });
-
-        return res.status(200).send({
-            images
-        });
-    }
-    catch (error) {
-        console.log(error);
-        return res.status(500).send({
-            message: 'Failed to search images'
-        });
-    }
-}   

@@ -11,7 +11,7 @@ import { Toaster } from 'react-hot-toast';
 import axios from 'axios';
 import { UserContext } from './context/userContext';
 
-axios.defaults.baseURL = import.meta.env.VITE_API_URL;
+// axios.defaults.baseURL = import.meta.env.VITE_API_URL;
 
 
 export default function App() {

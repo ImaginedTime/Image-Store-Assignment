@@ -14,7 +14,7 @@ export default function AuthPage() {
 
     const navigate = useNavigate();
 
-    const { setIsLoggedIn } = useContext(UserContext);
+    const { setIsLoggedIn, baseURL } = useContext(UserContext);
 
     const [loginSection, setLoginSection] = useState(true);
 
@@ -25,7 +25,7 @@ export default function AuthPage() {
     const register = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('/user/register', {
+            const response = await axios.post(`${baseURL}/user/register`, {
                 name,
                 email,
                 password
@@ -64,7 +64,7 @@ export default function AuthPage() {
     const login = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('/user/login', {
+            const response = await axios.post(`${baseURL}/user/login`, {
                 email,
                 password
             });

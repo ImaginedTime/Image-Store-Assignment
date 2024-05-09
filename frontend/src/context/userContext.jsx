@@ -8,12 +8,15 @@ export default function UserContextProvider({ children }) {
 
     const [searchQuery, setSearchQuery] = useState('');
 
+	const baseURL = import.meta.env.VITE_API_URL;
+
     return (
         <UserContext.Provider value={{
             isLoggedIn,
             setIsLoggedIn,
             searchQuery,
-            setSearchQuery
+            setSearchQuery,
+            baseURL
         }}>
             {children}
         </UserContext.Provider>
