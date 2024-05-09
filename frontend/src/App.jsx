@@ -11,10 +11,7 @@ import { Toaster } from 'react-hot-toast';
 import axios from 'axios';
 import { UserContext } from './context/userContext';
 
-import dotenv from 'dotenv';
-dotenv.config();
-
-axios.defaults.baseURL = process.env.REACT_APP_API_URL;
+axios.defaults.baseURL = import.meta.env.VITE_API_URL;
 
 
 export default function App() {
