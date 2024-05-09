@@ -34,6 +34,7 @@ export default function Home() {
 		})
 			.then(res => {
 				setImages(res.data.images);
+				setFilteredImages(res.data.images);
 			})
 			.catch(err => {
 				console.log(err);

@@ -5,6 +5,8 @@ import { Link, useNavigate } from 'react-router-dom'
 import { UserContext } from '../context/userContext'
 import toast from 'react-hot-toast';
 
+import gallery from '../assets/gallery.png'
+
 export default function Navbar() {
     const { isLoggedIn, setIsLoggedIn } = useContext(UserContext);
     const navigate = useNavigate();
@@ -28,8 +30,9 @@ export default function Navbar() {
 
     return (
         <div className='bg-[#242424] text-[#dfdfdf] flex justify-between items-center px-5 min-h-[10vh]'>
-            <Link to='/' className='ml-5'>
-                LOGO
+            <Link to='/' className='ml-5 flex justify-center items-center gap-3'>
+                <img src={gallery} alt="" className='w-12' />
+                <span className='text-2xl'>Image Store</span>
             </Link>
 
             <div className='flex gap-5 items-center'>

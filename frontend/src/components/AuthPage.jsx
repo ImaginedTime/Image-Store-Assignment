@@ -6,6 +6,10 @@ import { useNavigate } from 'react-router-dom';
 import { UserContext } from '../context/userContext';
 import toast from 'react-hot-toast';
 
+import facebook from '../assets/facebook.svg';
+import google from '../assets/google.svg';
+import linkedin from '../assets/linkedin.svg';
+
 export default function AuthPage() {
 
     const navigate = useNavigate();
@@ -96,15 +100,15 @@ export default function AuthPage() {
     }
 
     return (
-        <div className='flex justify-center items-center min-h-[90vh]'>
+        <div className='flex justify-center items-center min-h-[90vh] mx-5'>
             <div className={`container ${!loginSection && "right-panel-active"} max-w-screen-md`} id="container">
                 <div className="form-container sign-up-container">
                     <form onSubmit={register}>
                         <h1 className='font-bold text-4xl'>Create Account</h1>
                         <div className="social-container">
-                            <a href="#" className="social"><i className="fab fa-facebook-f"></i></a>
-                            <a href="#" className="social"><i className="fab fa-google-plus-g"></i></a>
-                            <a href="#" className="social"><i className="fab fa-linkedin-in"></i></a>
+                            <a href="#" className="social"><img src={facebook} alt="" className='w-7' /></a>
+                            <a href="#" className="social"><img src={google} alt="" className='w-7' /></a>
+                            <a href="#" className="social"><img src={linkedin} alt="" className='w-7' /></a>
                         </div>
                         <span className='mb-4'>or use your email for registration</span>
                         <input
@@ -140,9 +144,9 @@ export default function AuthPage() {
                     <form onSubmit={login}>
                         <h1 className='font-bold text-4xl'>Sign in</h1>
                         <div className="social-container">
-                            <a href="#" className="social"><i className="fab fa-facebook-f"></i></a>
-                            <a href="#" className="social"><i className="fab fa-google-plus-g"></i></a>
-                            <a href="#" className="social"><i className="fab fa-linkedin-in"></i></a>
+                            <a href="#" className="social"><img src={facebook} alt="" className='w-7' /></a>
+                            <a href="#" className="social"><img src={google} alt="" className='w-7' /></a>
+                            <a href="#" className="social"><img src={linkedin} alt="" className='w-7' /></a>
                         </div>
                         <span className='mb-4'>or use your account</span>
                         <input
