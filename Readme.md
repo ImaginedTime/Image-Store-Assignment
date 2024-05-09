@@ -2,6 +2,12 @@
 
 This is a simple image store server that allows you to upload images and retrieve them.
 
+## Hosting
+
+- The backend in hosted on [Render](https://render.com) and the frontend is hosted on [Vercel](https://vercel.com/).
+- Hosted Backend URL: [https://image-store-assignment.onrender.com](https://image-store-assignment.onrender.com)
+- Hosted Frontend URL: [image-store-assignment.vercel.app](image-store-assignment.vercel.app)
+
 ## Installation
 
 1. Clone the repository
